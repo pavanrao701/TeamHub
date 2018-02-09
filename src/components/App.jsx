@@ -1,20 +1,21 @@
 import React from 'react';
-//import Header from './Header';
-//import Footer from './Footer';
-import Main from './Main';
-//import './App.css';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import First from '../containers/First';
+import Next from '../containers/Next';
 
 
-export default class App extends React.Component {
-  render() {
-    return (
-  <div className="container">
+export default class Main extends React.Component{
 
-  <Main/>
+render(){
+  return(
+  <Router>
+      <div>
+        <Route exact path="/" component={First} />
+        <Route path="/next" component={Next} />
+      </div>
+  </Router>
 
-  
- </div>
-  
-    );
-  }
+)
+}
 }
